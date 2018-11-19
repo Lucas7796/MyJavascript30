@@ -9,3 +9,4 @@ adding some changes in each project. / Desafio Javscript30 por Wes Bos desenvolv
 - 02 - JS and CSS Clock
 - 03 - CSS Variables
 - 04 - Array Cardio Day 1
+- 05 - Flex Panel Gallery
