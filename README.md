@@ -10,3 +10,6 @@ adding some changes in each project. / Desafio Javscript30 por Wes Bos desenvolv
 - 03 - CSS Variables
 - 04 - Array Cardio Day 1
 - 05 - Flex Panel Gallery
+
+
+In order to open the projects, open the index.html files in the browser.
