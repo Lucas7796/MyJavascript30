@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p class="ouc" onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+
+    console.log("Just a simple console.log")
+
+
+    // Styled
+    console.log(' ');
+    console.log("%c a sample of a styled console.log", 'font-size: 10px; background: red;');
+    console.log(' ');
+
+    // warning!
+
+    // Error :|
+
+    // Info
+
+    // Testing
+
+    const p = document.querySelector('p');
+
+    console.log('A test with assert:')
+    console.assert(p.classList.contains('ouch'), 'The test is wrong');
+    console.log(' ');
+
+    // clearing
+
+    // Viewing DOM Elements
+
+    // Grouping together
+
+    console.log('Grouping the console logs');
+
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log( `This is ${dog.name}`);
+      console.groupEnd(`${dog.name}`);
+    });
+    console.log(' ');
+
+    // counting
+    console.log('Counting how many times Lucas appears');
+    console.count('Lucas');
+    console.count('Lucas');
+    console.log(' ');
+
+    // timing
+
+    console.log('Showing my github account data with Github API');
+    console.time('Fetching Data')
+
+    fetch('https://api.github.com/users/lucas7796')
+    .then( data => data.json())
+    .then(data => {
+      console.timeEnd('Fetching Data');
+      console.log(data);
+    });
+
+
+    
+
+  </script>
+</body>
+</html>
