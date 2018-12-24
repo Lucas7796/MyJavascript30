@@ -11,7 +11,9 @@ My Javascript30 by Wes Bos project developed by me. It will be around 30 differe
 - 05 - Flex Panel Gallery
 - 06 - Ajax Type Ahead	
 - 07 - Array Cardio Day 2
-- 09 - Dev Tools Domination	
+- 09 - Dev Tools Domination
+- 10 - Hold Shift and Check Checkboxes
+- 12 - Key Sequence Detection
 
 
 In order to open the projects, open the index.html files in the browser.
