@@ -5,6 +5,12 @@
   <title>Key Detection</title>
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
+<style>
+  .titulo{
+    text-align: center;
+    font-size: 100px;
+  }
+</style>
 <body>
 <script>
 
@@ -19,7 +25,8 @@
     console.log(pressed);
 
     if(pressed.join('').match(secretKey)){
-      console.log('Sucess');
+      //my change, add html to the body of the document
+      document.body.innerHTML = '<h1 class="titulo">You unlocked the secret code<h1>'
     }
     
   })
