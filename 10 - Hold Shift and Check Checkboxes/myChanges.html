@@ -86,6 +86,9 @@
     .hl {
       background: #ffc600;
     }
+    .item{
+      display: none;
+    }
     
   </style>
    <!--
@@ -96,7 +99,7 @@
   -->
 
   <form class="search-form">
-    <input type="text" class="search" placeholder="City or State">
+    <input type="text" class="search" placeholder="Word to search">
   </form>
 
   <div class="inbox">
@@ -139,33 +142,68 @@
   </div>
 
 <script>
-
+  //get all inputs of type checkbox
   const inputs = document.querySelectorAll('.item input[type="checkbox"]');
+  
 
-  //document.inputs.checked = true;
-
+  //variable which saves the last input checked
   let lastChecked;
   
+  //function that handles all the inputs checked and the ones in between
   function handleCheck(event){
     let inBetween = false;
+    //if shif key is pressed and this input is checked...
     if(event.shiftKey && this.checked){
+      //starts a loop for all inputs
       inputs.forEach(input => {
         console.log(input);
+          //check if the input is the one that we checking right now or the one the was checked previously 
           if(input === this || input === lastChecked){
             inBetween = !inBetween;
           }
+          //if in between is equal to true, check the input
           if(inBetween){
               input.checked = true;
             }
       });
     }
-
+    //save the last input checked in a variable
     lastChecked = this;
   }
-
+  // for each input clicked the method handleCheck() is fired
   inputs.forEach(input => input.addEventListener('click', handleCheck));
 
-  console.log(inputs);
+  const searchBox = document.querySelector('.search');
+  //NodeList of itens <p>
+  const itens = document.querySelectorAll('.item > p');
+  //Change it to Array
+  const itemsArray = Array.from(itens);
+
+  //if any key is pressed or the element searchBox is changed fires the method below
+  searchBox.addEventListener('change', wordToMatchh);
+  searchBox.addEventListener('keyup', wordToMatchh);
+
+    //function created to invoke the real function (wordToMatch)
+    //I didnt find any better way to invoke this function
+  function wordToMatchh(){
+    wordToMatch(searchBox.value, itemsArray)
+  } 
+
+
+  function wordToMatch(word, paragraphs){
+  
+    const regex = new RegExp(word, 'gi');
+
+      //for each paragraph, if it matches the word searched it will return in the screen, if not it wont.
+      paragraphs.forEach( paragraph => {
+      if(paragraph.textContent.match(regex)){
+        paragraph.parentElement.style.display = 'flex';
+      }else{
+        paragraph.parentElement.style.display = 'none';
+      }
+
+    });
+  }
 </script>
 </body>
 </html>
