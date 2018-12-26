@@ -1,7 +1,6 @@
 # MyJavascript30 #
 
-My Javascript30 by Wes Bos project developed by me. It will be 30 different JS projects which I will develop as showed in the course,
-adding some changes in each project. / Desafio Javscript30 por Wes Bos desenvolvido por mim. Serão 30 projetos com Javascript dos quais eu desenvolverei conforme proposto, adicionando alguns detalhes em cada um.
+My Javascript30 by Wes Bos project developed by me. It will be around 30 different JS projects which I will develop as showed in the course, adding some changes in each project. / Desafio Javscript30 por Wes Bos desenvolvido por mim. Serão por volta de 30 projetos com Javascript dos quais eu desenvolverei conforme proposto, adicionando alguns detalhes em cada um.
 
 ## So far I've done the following challenges: / Foram feitos os seguintes projetos até agora: ##
 
@@ -12,7 +11,9 @@ adding some changes in each project. / Desafio Javscript30 por Wes Bos desenvolv
 - 05 - Flex Panel Gallery
 - 06 - Ajax Type Ahead	
 - 07 - Array Cardio Day 2
-- 09 - Dev Tools Domination	
+- 09 - Dev Tools Domination
+- 10 - Hold Shift and Check Checkboxes
+- 12 - Key Sequence Detection
 
 
 In order to open the projects, open the index.html files in the browser.
