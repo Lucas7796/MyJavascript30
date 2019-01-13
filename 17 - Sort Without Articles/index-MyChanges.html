@@ -17,7 +17,7 @@
       min-height: 100vh;
     }
 
-    #bands {
+     .items {
       list-style: inside square;
       font-size: 20px;
       background: white;
@@ -25,6 +25,7 @@
       margin: auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
     }
     
     #bands li {
@@ -41,26 +42,62 @@
       text-decoration: none;
     }
 
-  </style>
+    .items input{
+      content: '⬜️';
+    }
 
-  <ul id="bands"></ul>
+    .items, .delete-items {
+      margin-top: 20px;
+    }
+
+    .items input, .delete-items input {
+      padding: 10px;
+      outline: 0;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .add-items {
+      /* margin-left: 70px; */
+      justify-content: center;
+      display: flex; 
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+  </style>
+  <div class="items">
+    <ul id="bands"></ul>
+    
+    <form class="add-items">
+      <input type="text" name="item" placeholder="Item Name" required>
+      <input type="submit" value="+ Add Item">
+    </form>
+  </div>
 
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 const bandsHTML = document.querySelector('#bands');
+const addItems = document.querySelector('.add-items');
+//const addItems = document.querySelector('[name=item]');
 
+//usa esta função para retirar os artigos no começo das palavras
 function strip(word){
   return word.replace(/^(a |the |an )/i, '').trim();
 }
 
-bands.sort((a,b) => {
+//método que faz a ordenação do array
+function sortArray(){
+  bands.sort((a,b) => {
   if(strip(a) > strip(b)){
     return 1;
   }else{
     return -1;
   }
 })
+}
+  //chamada do método
+  sortArray();
 
+//função para mostrar os elementos do array na página
 function showOnPage(Array){
   bandsHTML.innerHTML = Array.map((band) =>{
     return `
@@ -69,6 +106,25 @@ function showOnPage(Array){
 
   }).join('');
 };
+
+//funçõ para adicionar um item em algum array
+function addItem(value, Array){
+Array.push(value);
+}
+
+
+
+//event listener que chama uma função anônima que ao clicar no botão adiciona os itens no array e mostra na página 
+addItems.addEventListener('submit', function(event){
+  event.preventDefault();
+  const text = (this.querySelector('[name=item]')).value;
+  addItem(text, bands);
+  
+  sortArray()
+  this.reset();
+  showOnPage(bands);
+  } 
+); 
 
 showOnPage(bands);
 
