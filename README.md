@@ -14,6 +14,15 @@ My Javascript30 by Wes Bos project developed by me. It will be around 30 differe
 - 09 - Dev Tools Domination
 - 10 - Hold Shift and Check Checkboxes
 - 12 - Key Sequence Detection
+- 13 - Slide in on Scroll
+- 14 - JavaScript References VS Copying
+- 15 - LocalStorage
+- 17 - Sort Without Articles
+- 18 - Adding Up Times with Reduce
+- 24 - Sticky Nav	add 
+- 27 - Click and Drag	
+- 29 - Countdown Timer
+
 
 
 In order to open the projects, open the index.html files in the browser.
