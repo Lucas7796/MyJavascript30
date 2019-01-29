@@ -27,4 +27,4 @@ Source of the challenge: www.javascript30.com
 
 
 
-In order to open the projects, open the index.html files in the browser.
+In order to open the projects, open the index.html files in the browser
